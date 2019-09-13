@@ -6,7 +6,8 @@ a Homepage of Kokasai, NITGC's school festival.
 ### Require
 
 * npm
-** harp
+  * [harp](http://harpjs.com/) (`npm install -g harp`)
+  
 
 ### Build step
 
