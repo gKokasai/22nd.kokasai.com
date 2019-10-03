@@ -1,6 +1,6 @@
 div#schema.
     <script type="application/ld+json">
-    {
+{
         "@context": "https://schema.org/",
         "@graph": [
             {
@@ -27,11 +27,14 @@ div#schema.
                 "sameAs": "https://twitter.com/kokasai_GNCT"
             },
             {
-                "@id": "https://kokasai.com/22nd/#webpage",
-                "@type": "WebPage",
+                "@id": "https://kokasai.com/22nd/#toppage",
+                "@type": "WebSite",
                 "url": "https://kokasai.com/22nd/",
                 "name": "第22回 群馬高専工華祭 ホームページ",
-                "inLanguage": "ja"
+                "isPartOf": {
+                    "@id": "https://kokasai.com/#website"
+                },
+                "inLanguage": "ja",
                 "keywords": "群馬高専,群馬工業高等専門学校,National Institute of Technology Gunma College,NITGC,文化祭,工華祭 2019,第22回 工華祭,kokasai",
                 "publisher": {
                     "@id": "https://kokasai.com/#organization"
@@ -52,8 +55,11 @@ div#schema.
                 "inLanguage": "ja",
                 "location": {
                     "@type": "PostalAddress",
-                    "addressCountry": "JP",
-                    "addressRegion": "Gunma Prefecture"
+                    "@language": "ja",
+                  	"addressCountry": "日本",
+                  	"addressRegion": "群馬県",
+              		"addressLocality": "前橋市",
+          			"streetAddress": "鳥羽町580番地"
                 },
                 "organizer": {
                     "@id": "https://kokasai.com/#organization"
