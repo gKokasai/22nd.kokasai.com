@@ -1,16 +1,22 @@
-# 22nd.kokasai.com
-a Homepage of Kokasai, NITGC's school festival.
+# kokasai22nd
 
-## Build
+> Source of https://kokasai.com/22nd
 
-### Require
+## Build Setup
 
-* npm
-  * [harp](http://harpjs.com/) (`npm install -g harp`)
-  
+``` bash
+# install dependencies
+$ yarn install
 
-### Build step
+# serve with hot reload at localhost:3000
+$ yarn run dev
 
-1. `git clone https://github.com/eniehack/22nd.kokasai.com/`
-1. `cd {cloned directory}`
-2. `harp compile`
+# build for production and launch server
+$ yarn run build
+$ yarn start
+
+# generate static project
+$ yarn run generate
+```
+
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).

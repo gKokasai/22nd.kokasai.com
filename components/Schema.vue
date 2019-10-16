@@ -1,6 +1,7 @@
-div#schema.
+<template lang="pug">
+  div#schema.
     <script type="application/ld+json">
-{
+    {
         "@context": "https://schema.org/",
         "@graph": [
             {
@@ -28,7 +29,7 @@ div#schema.
             },
             {
                 "@id": "https://kokasai.com/22nd/#toppage",
-                "@type": "WebSite",
+                "@type": "WebPage",
                 "url": "https://kokasai.com/22nd/",
                 "name": "第22回 群馬高専工華祭 ホームページ",
                 "isPartOf": {
@@ -76,3 +77,4 @@ div#schema.
         ]
     }
     </script>
+</template>

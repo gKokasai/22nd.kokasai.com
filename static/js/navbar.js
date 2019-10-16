@@ -1,7 +1,7 @@
 new Vue({
     el: '#navbar',
     data: {
-        navbarIsActive: true
+        navbarIsActive: false
     },
     methods: {
         showNavbar() {
