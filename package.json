@@ -16,7 +16,9 @@
     "@nuxtjs/sitemap": "^2.0.0",
     "nuxt": "^2.10.1",
     "nuxt-buefy": "^0.3.16",
-    "pug": "^2.0.4"
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "pug-plain-loader": "^1.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
