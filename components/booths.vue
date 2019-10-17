@@ -20,7 +20,7 @@
               b-icon(icon="map-marker" size="is-small")
               span {{ item.place }}
         div.media-right
-          b-icon(icon="star-outline" size="is-large"))
+          b-icon(icon="star-outline" size="is-large")
 </template>
 
 <script>
