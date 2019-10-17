@@ -11,7 +11,7 @@
         b-navbar-item(tag="nuxt-link" :to="{ path: '/access/' }") アクセス
         b-navbar-item(tag="nuxt-link" :to="{ path: '/stages/' }") ステージ
         b-navbar-dropdown(label="企画" hoverable)
-          b-navbar-item(tag="nuxt-link" :to="{ path: '/booths/classes/' }") 企画一覧
+          b-navbar-item(tag="nuxt-link" :to="{ path: '/booths/list/' }") 企画一覧
       template(slot="end")
         a(class="navbar-item" href="https://twitter.com/kokasai_GNCT")
           b-icon(icon="twitter" size="is-medium")

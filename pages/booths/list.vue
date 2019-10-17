@@ -14,15 +14,16 @@ export default {
   components: {
     Booths
   },
+  asyncData() {
+    return {
+      items: process.env.jsonData.booths
+    }
+  },
   data() {
     return {
-      items: [
-        {circle: "電算部", boothName: "Dの挑戦状", place:"学生ホール"},
-        {circle: "文芸部", boothName: "文芸部", place: "学生ホール"}
-      ],
-      heroTitle: "部活動企画",
+      heroTitle: "クラス・部活動企画一覧",
       meta: {
-        title: "部活動企画"
+        title: "クラス・部活動企画一覧"
       }
     }
   }
