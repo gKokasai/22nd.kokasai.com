@@ -5,10 +5,11 @@
       article.media(v-for="(item, circle) in items")
         div(v-if="!item.icon")
           figure.media-left
+            div.image.is-128x128
             img(src="https://bulma.io/images/placeholders/128x128.png")
         div(v-else)
           figure.media-left
-            img(:src="item.icon")
+            div.image.is-128x128
         div.media-content
           div.content
             p.is-size-5-mobile.is-size-4-desktop.has-text-weight-bold
