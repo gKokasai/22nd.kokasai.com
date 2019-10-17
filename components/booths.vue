@@ -26,12 +26,10 @@
 
 <script>
 import Hero from "@/components/Hero.vue";
-import Booth from "@/components/Booth.vue";
 
 export default {
   components: {
-    Hero,
-    Booth
+    Hero
   },
   props: ["items", "heroTitle"]
 }
