@@ -11,6 +11,9 @@ div
             p.is-size-5-mobile.is-size-5-desktop.has-text-weight-light 一般の方は群馬高専 大駐車場に停めことができます。前橋方面の方はぐんまマラソンの交通規制もご確認ください。
       div.column
         article(class="title is-child notification is-light has-text-success has-text-centered")
+    div.columns.is-multiline
+      div.column.is-full
+        Timer
           div.content
             b-icon(icon="train" size="is-large")
             p.is-size-3-mobile 電車

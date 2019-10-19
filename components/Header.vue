@@ -1,8 +1,5 @@
 <template lang="pug">
   header
-    div(class="notification has-text-left countdown is-light has-text-success")
-      i(class="fas fa-3x fa-stopwatch")
-      div(id="countdown-timer")
     b-navbar
       template(slot="brand")
         nuxt-link(class="navbar-item" to="/") 第22回 群馬高専工華祭
