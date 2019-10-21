@@ -4,9 +4,10 @@ div.container.is-light.notification
     div.media-left
       b-icon(icon="timer" size="is-large")
     div.media-content
-      div.content
-        p.is-size-3-mobile.is-size-3-desktop 第22回工華祭まであと
-          span.has-text-weight-semibold  {{ countDown }}
+      div.content.is-size-4-mobile.is-size-3-desktop
+        p 第22回工華祭まであと
+          span.has-text-weight-semibold.is-hidden-mobile {{ countDown }}
+          div.has-text-weight-semibold.is-hidden-tablet {{ countDown }}
     div.media-right
   article.media.has-text-success(v-else)
     div.media-left
@@ -30,7 +31,7 @@ export default {
   },
   mounted() {
     setInterval(() => {
-      const diff = moment('2019-11-03 09:30:00.000').diff(moment());
+      const diff = moment('2019-11-02 09:30:00.000').diff(moment());
 
       const duration = moment.duration( diff );
 
