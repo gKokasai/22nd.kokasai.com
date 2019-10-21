@@ -3,13 +3,9 @@
     Hero(:title="heroTitle")
     div.container
       article.media(v-for="(item, circle) in items")
-        div(v-if="!item.icon")
-          figure.media-left
+        figure.media-left
             div.image.is-128x128
-            img(src="https://bulma.io/images/placeholders/128x128.png")
-        div(v-else)
-          figure.media-left
-            div.image.is-128x128
+              img(:src="'/22nd/images/' + circle + '.png'" :alt="circle +'のサークルカット'")
         div.media-content
           div.content
             p.is-size-5-mobile.is-size-4-desktop.has-text-weight-bold
