@@ -4,7 +4,7 @@
       div.columns
         div.column.is-2
           figure.image.is-128x128
-            img(src="https://bulma.io/images/placeholders/128x128.png")
+            img(:src="'/22nd/images/' + circle + '.png'" :alt="circle +'のサークルカット'")
         div.column.has-text-left
           h1.title {{ item.title }}
           p.has-text-weight-light
@@ -19,7 +19,7 @@
         p {{ item.description }}
     div.notification.is-hidden-tablet
       figure.image.is-128x128
-        img(src="https://bulma.io/images/placeholders/128x128.png")
+        img(:src="'/22nd/images/' + circle + '.png'" :alt="circle +'のサークルカット'")
       div.content
         h2.title {{ item.title }}
         p.has-text-weight-light
@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
   props: ["item", "circle"]
 }
