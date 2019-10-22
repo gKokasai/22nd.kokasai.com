@@ -6,7 +6,7 @@
       template(slot="start")
         b-navbar-item(tag="nuxt-link" :to="{ path: '/' }") トップ
         b-navbar-item(tag="nuxt-link" :to="{ path: '/access/' }") アクセス
-        b-navbar-item(tag="nuxt-link" :to="{ path: '/stages/' }") ステージ
+        b-navbar-item(tag="nuxt-link" :to="{ path: '/stages/list/' }") ステージ
         b-navbar-dropdown(label="企画" hoverable)
           b-navbar-item(tag="nuxt-link" :to="{ path: '/booths/list/' }") 企画一覧
       template(slot="end")
