@@ -14,7 +14,7 @@
             p.has-text-weight-light.grid
                 b-icon(icon="map-marker" custom-size="mdi-24px")
                 span {{ item.place }}
-        a.button.is-warning
+        a.button.is-warning(@click="addBookmark")
           b-icon(icon="star" custom-size="mdi-24px")
           span ブックマークに追加
       div.content
@@ -30,7 +30,7 @@
         p.has-text-weight-light.grid
           b-icon(icon="map-marker" custom-size="mdi-24px")
           span {{ item.place }}
-        a.button.is-warning
+        a.button.is-warning(@click="addBookmark")
           b-icon(icon="star" custom-size="mdi-24px")
           span ブックマークに追加
       div.content
@@ -50,8 +50,34 @@
 
 <script>
 import moment from "moment";
+import * as Cookie from "js-cookie";
 
 export default {
-  props: ["item", "circle"]
+  props: ["item", "circle"],
+  methods: {
+    addBookmark: function() {
+      try {
+        const cookieRes = this.$cookies.get("bookmark")
+        this.$cookies.remove("bookmark")
+
+        cookieRes.booths.push(this.circle)
+        this.$cookies.set("bookmark", cookieRes)
+
+        this.$buefy.toast.open({
+          message: 'ブックマークに追加しました！',
+          position: 'is-bottom',
+          type: 'is-success'
+        })
+      } catch (error) {
+        this.$buefy.toast.open({
+          message: 'ブックマークに追加できませんでした！',
+          position: 'is-bottom',
+          type: 'is-danger'
+        })
+        console.log(error)
+      }
+    }
+  }
 }
+
 </script>

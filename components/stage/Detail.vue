@@ -18,7 +18,7 @@
               b-icon(icon="clock-outline" size="mdi-24px")
               span
                 span(v-for="schedule in item.schedules") {{ schedule.startedTime | moment }} ~ {{ schedule.endedTime | moment }} <br />
-        a.button.is-warning
+        a.button.is-warning(@click="addBookmark")
           b-icon(icon="star" custom-size="mdi-24px")
           span ブックマークに追加
       div.content
@@ -38,7 +38,7 @@
             b-icon(icon="clock-outline" size="mdi-24px")
             span
               span(v-for="schedule in item.schedules") {{ schedule.startedTime | moment }} ~ {{ schedule.endedTime | moment }} <br />
-        a.button.is-warning
+        a.button.is-warning(@click="addBookmark")
           b-icon(icon="star" custom-size="mdi-24px")
           span ブックマークに追加
       div.content
@@ -64,6 +64,30 @@ export default {
   filters: {
     moment: function (date) {
       return moment(date).format("YYYY.MM.DD HH:mm");
+    }
+  },
+  methods: {
+    addBookmark: function() {
+      try {
+        const cookieRes = this.$cookies.get("bookmark")
+        this.$cookies.remove("bookmark")
+
+        cookieRes.stages.push(this.title)
+        this.$cookies.set("bookmark", cookieRes)
+
+        this.$buefy.toast.open({
+          message: 'ブックマークに追加しました！',
+          position: 'is-bottom',
+          type: 'is-success'
+        })
+      } catch (error) {
+        this.$buefy.toast.open({
+          message: 'ブックマークに追加できませんでした',
+          position: 'is-bottom',
+          type: 'is-danger'
+        })
+        console.log(error)
+      }
     }
   }
 }
