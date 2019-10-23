@@ -50,7 +50,6 @@
 
 <script>
 import moment from "moment";
-import * as Cookie from "js-cookie";
 
 export default {
   props: ["item", "circle"],
