@@ -24,7 +24,8 @@
               span {{ booth.item.place }}
         div.media-right
           b-icon(icon="star-outline" size="is-large")
-      h2.subtitle.has-text-success ステージ企画
+        div.column.is-full
+          h2.has-text-success.is-size-5-mobile.is-size-4-desktop ステージ企画
       article.media(v-for="stage in stages")
         figure.media-left
             div.image.is-128x128
