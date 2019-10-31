@@ -55,23 +55,38 @@ export default {
   components: {
     Hero
   },
+  methods: {
+    removeStageBookmark: (title) => {
+      this.stages = this.stages.filter(value => value !== title)
+      localStorage.setItem("stages_bookmark", this.stages)
+
+      this.$buefy.toast.open({
+          message: 'ブックマークから削除しました！',
+          position: 'is-bottom',
+          type: 'is-success'
+        })
+    }
+  },
+  mounted() {
+    let bookmarkedStages = JSON.parse(localStorage.getItem("stages_bookmark")) || [];
+    let bookmarkedBooths = JSON.parse(localStorage.getItem("booths_bookmark")) || [];
+
+    bookmarkedBooths.forEach(value => {
+      this.booths.push({circle: value, item: process.env.jsonData.booths[value]})
+    });
+
+    bookmarkedStages.forEach(value => {
+      this.stages.push({title: value, item: process.env.jsonData.stages[value]})
+    });
+  },
   data() {
-    const cookie = this.$cookies.get("bookmark")
-
-    const boothsArray = [];
-    cookie.booths.forEach(value => {
-      boothsArray.push({circle: value, item: process.env.jsonData.booths[value]})
-    });
-
-    const stagesArray = [];
-    cookie.stages.forEach(value => {
-      stagesArray.push({title: value, item: process.env.jsonData.stages[value]})
-    });
-
     return {
       heroTitle: "ブックマーク",
-      booths: boothsArray,
-      stages: stagesArray
+      booths: [],
+      stages: [],
+      meta: {
+        title: "ブックマーク"
+      }
     }
   }
 }
