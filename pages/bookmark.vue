@@ -2,7 +2,12 @@
   div
     Hero(:title="heroTitle")
     div.container
-      h2.subtitle.has-text-success クラス部活動企画
+      div.columns.is-multiline
+        div.column.is-full
+          h2.has-text-success.subtitle.is-size-5-mobile.is-size-4-desktop ブックマーク機能とは？
+          p.has-text-success ブックマーク機能とは気になった企画を保存しておき、使いたいときに呼び出しできる機能です。PCでブックマークしておきスマホで呼び出す、といった高機能なことはできず簡易的なものではありますが、ご活用ください。
+        div.column.is-full
+          h2.has-text-success.is-size-5-mobile.is-size-4-desktop クラス部活動企画
       article.media(v-for="booth in booths")
         figure.media-left
             div.image.is-128x128
