@@ -18,7 +18,10 @@
               b-icon(icon="clock-outline" size="mdi-24px")
               span
                 span(v-for="schedule in item.schedules") {{ schedule.startedTime | moment }} ~ {{ schedule.endedTime | moment }} <br />
-        a.button.is-warning(@click="addBookmark")
+        a.button.is-danger(@click="deleteBookmark" v-if="isFavoritedItsBooth")
+          b-icon(icon="star-outline" custom-size="mdi-24px")
+          span ブックマークから削除
+        a.button.is-warning(@click="addBookmark" v-else)
           b-icon(icon="star" custom-size="mdi-24px")
           span ブックマークに追加
       div.content
@@ -38,7 +41,10 @@
             b-icon(icon="clock-outline" size="mdi-24px")
             span
               span(v-for="schedule in item.schedules") {{ schedule.startedTime | moment }} ~ {{ schedule.endedTime | moment }} <br />
-        a.button.is-warning(@click="addBookmark")
+        a.button.is-danger(@click="deleteBookmark" v-if="isFavoritedItsBooth")
+          b-icon(icon="star-outline" custom-size="mdi-24px")
+          span ブックマークから削除
+        a.button.is-warning(@click="addBookmark" v-else)
           b-icon(icon="star" custom-size="mdi-24px")
           span ブックマークに追加
       div.content
@@ -66,14 +72,24 @@ export default {
       return moment(date).format("YYYY.MM.DD HH:mm");
     }
   },
+  data() {
+    return {
+      stages: [],
+      isFavoritedItsBooth: false
+    }
+  },
+  mounted() {
+    const bookmark = JSON.parse(localStorage.getItem("stages_bookmark")) || [];
+    this.stages = bookmark;
+    this.isFavoritedItsBooth = bookmark.some(value => {
+      return (value === this.title)
+    })
+  },
   methods: {
     addBookmark: function() {
       try {
-        const cookieRes = this.$cookies.get("bookmark")
-        this.$cookies.remove("bookmark")
-
-        cookieRes.stages.push(this.title)
-        this.$cookies.set("bookmark", cookieRes)
+        this.stages.push(this.title)
+        localStorage.setItem("stages_bookmark", JSON.stringify(this.stages))
 
         this.$buefy.toast.open({
           message: 'ブックマークに追加しました！',
@@ -83,6 +99,26 @@ export default {
       } catch (error) {
         this.$buefy.toast.open({
           message: 'ブックマークに追加できませんでした',
+          position: 'is-bottom',
+          type: 'is-danger'
+        })
+        console.log(error)
+      }
+    },
+    deleteBookmark: function() {
+      try {
+        const newBookmark = this.stages.filter(value => value !== this.title);
+
+        localStorage.setItem("stages_bookmark", JSON.stringify(newBookmark))
+
+        this.$buefy.toast.open({
+          message: '選択したブックマークを削除しました！',
+          position: 'is-bottom',
+          type: 'is-success'
+        })
+      } catch (error) {
+        this.$buefy.toast.open({
+          message: 'ブックマークを削除できませんでした',
           position: 'is-bottom',
           type: 'is-danger'
         })
