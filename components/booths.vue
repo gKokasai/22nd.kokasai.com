@@ -2,17 +2,19 @@
   div
     Hero(:title="heroTitle")
     div.container
-      article.media(v-for="(item, circle) in items")
+      figure.image
+        img(src="/22nd/images/tentsmap.svg" alt="Map" style="height: 600px;width: 480px;")
+      article.media(v-for="item in items")
         figure.media-left
             div.image.is-128x128
-              img(:src="'/22nd/images/' + circle + '.png'" :alt="circle +'のサークルカット'")
+              img(:src="'/22nd/images/' + item.circle + '.png'" :alt="item.circle +'のサークルカット'")
         div.media-content
           div.content
             p.is-size-5-mobile.is-size-4-desktop.has-text-weight-bold
-              nuxt-link(:to="'/booths/' + circle") {{ item.title }}
+              nuxt-link(:to="'/booths/' + item.circle") {{ item.title }}
             p.has-text-weight-light
               b-icon(icon="account" size="is-small")
-              span {{ circle }}
+              span {{ item.circle }}
             p.has-text-weight-light
               b-icon(icon="map-marker" size="is-small")
               span {{ item.place }}

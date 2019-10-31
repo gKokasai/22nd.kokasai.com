@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    boothDetailComponents(:item="json[boothName]" :circle="boothName")
+    boothDetailComponents(:item="item" :circle="boothName")
 </template>
 
 <script>
@@ -25,7 +25,15 @@ export default {
       meta: {
         title: this.$route.params.booth,
       },
-      boothName: this.$route.params.booth
+      boothName: this.$route.params.booth,
+      item: {}
+    }
+  },
+  created() {
+    for(var i = 0; i < this.json.length; i++) {
+      if (this.json[i]["circle"] === this.boothName) {
+        this.item = this.json[i]
+      }
     }
   }
 }

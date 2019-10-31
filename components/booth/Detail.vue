@@ -10,11 +10,14 @@
           div.data
             p.has-text-weight-light.grid
               b-icon(icon="account" custom-size="mdi-24px")
-              span {{ circle }}
+              span {{ item.circle }}
             p.has-text-weight-light.grid
                 b-icon(icon="map-marker" custom-size="mdi-24px")
                 span {{ item.place }}
-        a.button.is-warning(@click="addBookmark")
+        a.button.is-danger(@click="deleteBookmark" v-if="isFavoritedItsBooth")
+          b-icon(icon="star-outline" custom-size="mdi-24px")
+          span ブックマークから削除
+        a.button.is-warning(@click="addBookmark" v-else)
           b-icon(icon="star" custom-size="mdi-24px")
           span ブックマークに追加
       div.content
@@ -26,11 +29,14 @@
         h1.title {{ item.title }}
         p.has-text-weight-light.grid
           b-icon(icon="account" custom-size="mdi-24px")
-          span {{ circle }}
+          span {{ item.circle }}
         p.has-text-weight-light.grid
           b-icon(icon="map-marker" custom-size="mdi-24px")
           span {{ item.place }}
-        a.button.is-warning(@click="addBookmark")
+        a.button.is-danger(@click="deleteBookmark" v-if="isFavoritedItsBooth")
+          b-icon(icon="star-outline" custom-size="mdi-24px")
+          span ブックマークから削除
+        a.button.is-warning(@click="addBookmark" v-else)
           b-icon(icon="star" custom-size="mdi-24px")
           span ブックマークに追加
       div.content
@@ -53,14 +59,24 @@ import moment from "moment";
 
 export default {
   props: ["item", "circle"],
+  data() {
+    return {
+      booths: [],
+      isFavoritedItsBooth: false
+    }
+  },
+  mounted() {
+    const bookmark = JSON.parse(localStorage.getItem("booths_bookmark")) || [];
+    this.booths = bookmark;
+    this.isFavoritedItsBooth = bookmark.some(value => {
+      return (value === this.circle)
+    })
+  },
   methods: {
     addBookmark: function() {
       try {
-        const cookieRes = this.$cookies.get("bookmark")
-        this.$cookies.remove("bookmark")
-
-        cookieRes.booths.push(this.circle)
-        this.$cookies.set("bookmark", cookieRes)
+        this.booths.push(this.circle)
+        localStorage.setItem("booths_bookmark", JSON.stringify(this.booths))
 
         this.$buefy.toast.open({
           message: 'ブックマークに追加しました！',
@@ -69,7 +85,27 @@ export default {
         })
       } catch (error) {
         this.$buefy.toast.open({
-          message: 'ブックマークに追加できませんでした！',
+          message: 'ブックマークに追加できませんでした',
+          position: 'is-bottom',
+          type: 'is-danger'
+        })
+        console.log(error)
+      }
+    },
+    deleteBookmark: function() {
+      try {
+        this.booths = this.booths.filter(value => value !== this.circle);
+
+        localStorage.setItem("booths_bookmark", JSON.stringify(this.booths))
+
+        this.$buefy.toast.open({
+          message: '選択したブックマークを削除しました！',
+          position: 'is-bottom',
+          type: 'is-success'
+        })
+      } catch (error) {
+        this.$buefy.toast.open({
+          message: 'ブックマークを削除できませんでした',
           position: 'is-bottom',
           type: 'is-danger'
         })
