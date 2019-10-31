@@ -50,10 +50,16 @@
 
 <script>
 import Hero from "@/components/Hero.vue";
+import moment from "moment";
 
 export default {
   components: {
     Hero
+  },
+  filters: {
+    moment: function (date) {
+      return moment(date).format("YYYY.MM.DD HH:mm");
+    }
   },
   methods: {
     removeStageBookmark: (title) => {
