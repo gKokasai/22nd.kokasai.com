@@ -31,26 +31,27 @@ export default {
   },
   mounted() {
     setInterval(() => {
-      const diff = moment('2019-11-02 09:30:00.000').diff(moment());
-
-      const duration = moment.duration( diff );
-
-      const days = Math.floor(duration.asDays());
-      const hours   = duration.hours();
-      const minutes = duration.minutes();
-      const seconds = duration.seconds();
+      const startTime = moment('2019-11-02 09:30:00.000');
+      const endTime = moment('2019-11-03 16:30:00.000');
 
       this.now = moment();
 
-      if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
+      if (startTime.isBefore() && endTime.isAfter()) {
         this.countDown = "第22回工華祭 開催中です！";
         this.isKokasaiStarted = true;
         this.isKokasaiEnded = false;
-      } else if(days <= -2 && hours <= -7 && minutes <= 0 && seconds <= 0) {
+      } else if(endTime.isBefore()) {
         this.countDown = "第22回工華祭は終了しました";
         this.isKokasaiStarted = true;
         this.isKokasaiEnded = true;
-      } else {
+      } else if (startTime.isAfter()) {
+        const diff = startTime.diff(moment());
+        const duration = moment.duration( diff );
+        const days = Math.floor(duration.asDays());
+        const hours   = duration.hours();
+        const minutes = duration.minutes();
+        const seconds = duration.seconds();
+
         this.countDown = days + '日' +  hours + '時間' + minutes + '分' + seconds + '秒';
         this.isKokasaiStarted = false;
         this.isKokasaiEnded = false;
