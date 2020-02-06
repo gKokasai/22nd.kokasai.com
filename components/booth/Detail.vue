@@ -4,7 +4,7 @@
       div.columns
         div.column.is-2
           figure.image.is-128x128
-            img(:src="'/22nd/images/' + circle + '.png'" :alt="circle +'のサークルカット'")
+            img(:src="'/22nd/images/' + item.circle + '.png'" :alt="item.circle +'のサークルカット'")
         div.column.has-text-left
           h1.title {{ item.title }}
           div.data
@@ -14,6 +14,7 @@
             p.has-text-weight-light.grid
                 b-icon(icon="map-marker" custom-size="mdi-24px")
                 span {{ item.place }}
+        a.button.is-danger(@click="deleteBookmark" v-if="isFavoritedItsBooth")
         a.button.is-danger(@click="deleteBookmark" v-if="isFavoritedItsBooth")
           b-icon(icon="star-outline" custom-size="mdi-24px")
           span ブックマークから削除
@@ -33,6 +34,7 @@
         p.has-text-weight-light.grid
           b-icon(icon="map-marker" custom-size="mdi-24px")
           span {{ item.place }}
+        a.button.is-danger(@click="deleteBookmark" v-if="isFavoritedItsBooth")
         a.button.is-danger(@click="deleteBookmark" v-if="isFavoritedItsBooth")
           b-icon(icon="star-outline" custom-size="mdi-24px")
           span ブックマークから削除
@@ -58,7 +60,7 @@
 import moment from "moment";
 
 export default {
-  props: ["item", "circle"],
+  props: ["item"],
   data() {
     return {
       booths: [],
@@ -69,7 +71,7 @@ export default {
     const bookmark = JSON.parse(localStorage.getItem("booths_bookmark")) || [];
     this.booths = bookmark;
     this.isFavoritedItsBooth = bookmark.some(value => {
-      return (value === this.circle)
+      return (value === this.item.circle)
     })
   },
   methods: {
@@ -111,6 +113,20 @@ export default {
         })
         console.log(error)
       }
+    },
+    createShareLink(url, params) {
+      var encoded_params = [];
+      for (var key in params) {
+          var value = encodeURIComponent(params[key]);
+          encoded_params.push(key + "=" + value);
+      }
+      return url + "?" + encoded_params.join("&");
+    },
+    shareToTwitter() {
+      return createShareLink("https://twitter.com/intent/tweet", {
+        "url": "https://kokasai.com/22nd/booths/" + this.item["circle"],
+        "text": this.item["title"] + " - 第22回群馬高専工華祭"
+      });
     }
   }
 }
