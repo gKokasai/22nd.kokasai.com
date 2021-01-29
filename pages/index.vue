@@ -44,7 +44,7 @@ div
 <script>
 import Hero from '@/components/Hero.vue';
 import Meta from "~/assets/mixins/meta";
-import Timer from "@/components/Timer.Vue";
+import Timer from "@/components/Timer.vue";
 
 export default {
   mixins:[
