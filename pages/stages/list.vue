@@ -5,7 +5,7 @@
       article.media(v-for="(item, title) in items")
         figure.media-left
             div.image.is-128x128
-              img(:src="'/22nd/images/' + item.organization + '.png'" :alt="title +'のサークルカット'")
+              img(:src="'/images/' + item.organization + '.png'" :alt="title +'のサークルカット'")
         div.media-content
           div.content
             p.is-size-5-mobile.is-size-4-desktop.has-text-weight-bold

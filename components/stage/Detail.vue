@@ -4,7 +4,7 @@
       div.columns
         div.column.is-2
           figure.image.is-128x128
-            img(:src="'/22nd/images/' + item.organization + '.png'" :alt="item.organization +'のサークルカット'")
+            img(:src="'/images/' + item.organization + '.png'" :alt="item.organization +'のサークルカット'")
         div.column.has-text-left
           h1.title {{ title }}
           div.data
@@ -28,7 +28,7 @@
         p {{ item.description }}
     div.notification.is-hidden-tablet
       figure.image.is-128x128
-        img(:src="'/22nd/images/' + item.organization + '.png'" :alt="item.organization +'のサークルカット'")
+        img(:src="'/images/' + item.organization + '.png'" :alt="item.organization +'のサークルカット'")
       div.content
         h2.title {{ title }}
         p.has-text-weight-light.grid

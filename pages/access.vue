@@ -18,7 +18,7 @@ div
               b-icon(icon="car" size="is-large")
               span 車
             figure.image.is-5by3
-              img(src="/22nd/images/parking.png" alt="駐車場" @click="isImageModalActive = true")
+              img(src="/images/parking.png" alt="駐車場" @click="isImageModalActive = true")
             p.is-size-5-mobile.is-size-5-desktop.has-text-weight-light 一般の方は群馬高専校内の駐車場を上図桃色の駐車場を3つ、大きな方から順に開放しますので、そちらを利用することができます。また、前橋方面の方はぐんまマラソンの交通規制もご確認ください。
       div.column.is-half-desktop
         article.notification.is-light.has-text-success
@@ -64,7 +64,7 @@ div
                           span(v-else) {{ minute }}
       b-modal(:active.sync="isImageModalActive")
         p.image.is-4by3
-          img(src="/22nd/images/parking.png" alt="駐車場")
+          img(src="/images/parking.png" alt="駐車場")
 </template>
 
 <script>

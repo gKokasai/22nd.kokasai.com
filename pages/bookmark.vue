@@ -11,7 +11,7 @@
       article.media(v-for="booth in booths")
         figure.media-left
             div.image.is-128x128
-              img(:src="'/22nd/images/' + booth.circle + '.png'" :alt="booth.circle +'のサークルカット'")
+              img(:src="'/images/' + booth.circle + '.png'" :alt="booth.circle +'のサークルカット'")
         div.media-content
           div.content
             p.is-size-5-mobile.is-size-4-desktop.has-text-weight-bold
@@ -29,7 +29,7 @@
       article.media(v-for="stage in stages")
         figure.media-left
             div.image.is-128x128
-              img(:src="'/22nd/images/' + stage.item.organization + '.png'" :alt="stagetitle +'のサークルカット'")
+              img(:src="'/images/' + stage.item.organization + '.png'" :alt="stagetitle +'のサークルカット'")
         div.media-content
           div.content
             p.is-size-5-mobile.is-size-4-desktop.has-text-weight-bold

@@ -87,7 +87,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: "2019/11/02~2019/11/03に開催する第22回群馬高専工華祭の公式Webサイトです。" },
       { hid: "og:title", property: "og:title", content: "第22回 群馬高専工華祭"},
       { hid: "og:type", property: "og:type", content: "website"},
-      { hid: "og:url", property: "og:url", content: "https://www.kokasai.com/22nd/"},
+      { hid: "og:url", property: "og:url", content: "https://22nd.kokasai.com"},
       { hid: "og:description", property: "og:description", content: "2019/11/02~2019/11/03に開催する第22回群馬高専工華祭の公式Webサイトです。"},
       { hid: "og:email", property: "og:email", content: "kokasai.gnct@gmail.com"},
       { hid: "og:site_name", property: "og:site_name", content: "群馬高専工華祭実行委員会 公式サイト"},
@@ -95,7 +95,7 @@ module.exports = {
       { hid: "og:image", property: "og:image", content: "/logo.png"},
       { name: "twitter:card", content: "summary"},
       { name: "twitter:site", content: "@kokasai_GNCT"},
-      { name: "twitter:url", content: "https://kokasai.com/22nd/"},
+      { name: "twitter:url", content: "https://22nd.kokasai.com/"},
       { name: "twitter:title", content: "Home - 第22回 群馬高専工華祭"},
       { name: "twitter:description", content: "2019/11/02~2019/11/03に開催する第22回群馬高専工華祭の公式Webサイトです。"},
       { name: "twitter:image", content: "/logo.png"}
@@ -118,7 +118,7 @@ module.exports = {
   },
 
   router: {
-    base: "/22nd/",
+    base: "/",
   },
 
   /*
@@ -154,7 +154,7 @@ module.exports = {
 
   sitemap: {
     path: '/sitemap.xml',
-    hostname: "https://kokasai.com/22nd/",
+    hostname: "https://22nd.kokasai.com/",
     cacheTime: 1000 * 60 * 15,
     gzip: true,
     generate: true, // 静的ジェネレート時にも利用

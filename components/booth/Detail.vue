@@ -4,7 +4,7 @@
       div.columns
         div.column.is-2
           figure.image.is-128x128
-            img(:src="'/22nd/images/' + item.circle + '.png'" :alt="item.circle +'のサークルカット'")
+            img(:src="'/images/' + item.circle + '.png'" :alt="item.circle +'のサークルカット'")
         div.column.has-text-left
           h1.title {{ item.title }}
           div.data
@@ -25,7 +25,7 @@
         p {{ item.description }}
     div.notification.is-hidden-tablet
       figure.image.is-128x128
-        img(:src="'/22nd/images/' + circle + '.png'" :alt="circle +'のサークルカット'")
+        img(:src="'/images/' + circle + '.png'" :alt="circle +'のサークルカット'")
       div.content
         h1.title {{ item.title }}
         p.has-text-weight-light.grid
@@ -124,7 +124,7 @@ export default {
     },
     shareToTwitter() {
       return createShareLink("https://twitter.com/intent/tweet", {
-        "url": "https://kokasai.com/22nd/booths/" + this.item["circle"],
+        "url": "https://22nd.kokasai.com/booths/" + this.item["circle"],
         "text": this.item["title"] + " - 第22回群馬高専工華祭"
       });
     }
