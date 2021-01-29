@@ -68,7 +68,7 @@ export default {
         { hid: 'description', name: 'description', content: "2019/11/02~2019/11/03に開催する第22回群馬高専工華祭の公式Webサイトです。" },
         { hid: "og:title", property: "og:title", content: "第22回 群馬高専工華祭"},
         { hid: "og:type", property: "og:type", content: "website"},
-        { hid: "og:url", property: "og:url", content: "https://www.kokasai.com/22nd/"},
+        { hid: "og:url", property: "og:url", content: "https://22nd.kokasai.com/"},
         { hid: "og:description", property: "og:description", content: "2019/11/02~2019/11/03に開催する第22回群馬高専工華祭の公式Webサイトです。"},
         { hid: "og:email", property: "og:email", content: "kokasai.gnct@gmail.com"},
         { hid: "og:site_name", property: "og:site_name", content: "群馬高専工華祭実行委員会 公式サイト"},
@@ -76,7 +76,7 @@ export default {
         { hid: "og:image", property: "og:image", content: "/logo.png"},
         { name: "twitter:card", content: "summary"},
         { name: "twitter:site", content: "@kokasai_GNCT"},
-        { name: "twitter:url", content: "https://kokasai.com/22nd/"},
+        { name: "twitter:url", content: "https://22nd.kokasai.com/"},
         { name: "twitter:title", content: "トップ - 第22回 群馬高専工華祭"},
         { name: "twitter:description", content: "2019/11/02~2019/11/03に開催する第22回群馬高専工華祭の公式Webサイトです。"},
         { name: "twitter:image", content: "/logo.png"}
@@ -111,9 +111,9 @@ export default {
                 "sameAs": "https://twitter.com/kokasai_GNCT"
               },
               {
-                "@id": "https://kokasai.com/22nd/#toppage",
+                "@id": "https://22nd.kokasai.com/#toppage",
                 "@type": "WebPage",
-                "url": "https://kokasai.com/22nd/",
+                "url": "https://22nd.kokasai.com/",
                 "name": "第22回 群馬高専工華祭 ホームページ",
                 "isPartOf": {
                     "@id": "https://kokasai.com/#website"
@@ -128,11 +128,11 @@ export default {
                 },
                 "copyrightYear": 2019,
                 "publication": {
-                    "@id": "https://kokasai.com/22nd/#event"
+                    "@id": "https://22nd.kokasai.com/#event"
                 }
               },
               {
-                "@id": "https://kokasai.com/22nd/#event",
+                "@id": "https://22nd.kokasai.com/#event",
                 "@type": "PublicationEvent",
                 "name": "第22回 群馬高専工華祭",
                 "isAccessibleForFree": true,

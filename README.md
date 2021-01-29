@@ -1,6 +1,6 @@
 # kokasai22nd
 
-> Source of https://kokasai.com/22nd
+> Source of https://22nd.kokasai.com
 
 ## Build Setup
 

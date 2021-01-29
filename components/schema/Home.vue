@@ -28,9 +28,9 @@
           "sameAs": "https://twitter.com/kokasai_GNCT"
         }
         {
-          "@id": "https://kokasai.com/22nd/#toppage",
+          "@id": "https://22nd.kokasai.com/#toppage",
           "@type": "WebPage",
-          "url": "https://kokasai.com/22nd/",
+          "url": "https://22nd.kokasai.com/",
           "name": "第22回 群馬高専工華祭 ホームページ",
           "isPartOf": {
               "@id": "https://kokasai.com/#website"
@@ -45,11 +45,11 @@
           },
           "copyrightYear": 2019,
           "publication": {
-              "@id": "https://kokasai.com/22nd/#event"
+              "@id": "https://22nd.kokasai.com/#event"
           }
         }
         {
-          "@id": "https://kokasai.com/22nd/#event",
+          "@id": "https://22nd.kokasai.com/#event",
           "@type": "PublicationEvent",
           "name": "第22回 群馬高専工華祭",
           "isAccessibleForFree": true,
