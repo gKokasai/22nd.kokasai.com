@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxtjs/sitemap": "^2.4.0",
     "moment": "^2.29.1",
-    "nuxt": "^2.10.1",
+    "nuxt": "^2.14.12",
     "nuxt-buefy": "^0.4.4",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
