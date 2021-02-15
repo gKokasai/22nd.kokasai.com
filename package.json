@@ -26,6 +26,6 @@
     "cross-env": "^5.0.1",
     "eslint": "^5.0.1",
     "eslint-loader": "^2.0.0",
-    "eslint-plugin-vue": "^4.0.0"
+    "eslint-plugin-vue": "^7.6.0"
   }
 }
