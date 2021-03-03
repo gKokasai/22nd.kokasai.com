@@ -13,19 +13,20 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxt/ufo": "^0.5.4",
     "@nuxtjs/sitemap": "^2.4.0",
     "moment": "^2.29.1",
-    "nuxt": "^2.15.0",
+    "nuxt": "^2.15.2",
     "nuxt-buefy": "^0.4.4",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pug-loader": "^2.4.0",
     "pug-plain-loader": "^1.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.3",
-    "eslint": "^7.20.0",
+    "eslint": "^7.21.0",
     "eslint-loader": "^4.0.2",
-    "eslint-plugin-vue": "^7.6.0"
+    "eslint-plugin-vue": "^7.7.0"
   }
 }
